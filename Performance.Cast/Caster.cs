@@ -16,19 +16,23 @@ namespace Performance.Cast
             Summ = 0;
             Time = 0;
             Sw = Stopwatch.StartNew();
-            foreach (object o in Values)
+            int i = 0;
+            while (++i < 42)
             {
-                Cast(o);
+                foreach (object o in Values)
+                {
+                    Cast(o);
+                }
             }
             Sw.Stop();
             Time = Sw.ElapsedMilliseconds;
 
         }
 
-        protected abstract void Cast(object o); 
+        protected abstract void Cast(object o);
         public void PrintResults()
         {
-           
+
             Console.WriteLine(this.GetType().Name);
             Console.WriteLine($"Elapsed milliseconds - {Time}");
         }

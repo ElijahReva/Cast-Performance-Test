@@ -7,10 +7,10 @@ namespace Performance.Cast
     {
        protected override void Cast(object o)
         {
-            if (o is int)
+            if (o is string)
             {
-                int x = (int) o;
-                Summ += x;
+                string x = (string) o;
+                Summ += x.Length;
             }
         }
 

@@ -7,8 +7,8 @@ namespace Performance.Cast
 {
     public static class Testing
     {
-        
 
+        public static object[] Values;
 
         private static void Main(string[] args)
         {
@@ -16,7 +16,7 @@ namespace Performance.Cast
 
             var testers = new List<Caster>
             {
-                new IsAndCastCaster(), 
+                new IsAndCastCaster(),
                 new AsAndNullCheckCaster(),
                 new IsAndAsCaster()
             };
@@ -45,6 +45,7 @@ namespace Performance.Cast
                 objects[i + 1] = "x";
                 objects[i + 2] = 1;
             }
+
             sw.Stop();
             Console.WriteLine($"Creation time - {sw.ElapsedMilliseconds}");
             Caster.Values = objects;
